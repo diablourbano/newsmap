@@ -61,7 +61,7 @@ function zoomIn(countries, projection, path, canvas, zoom, countryName) {
           $("#sidebar").fadeOut();
           selectedTrending = null;
 
-          setTimeout(function() {
+          d3.timer(function() {
             structureNews(countryName, response);
             drawArticles(newsToDisplay, function() {
               if (shouldPlayNews == true) {
