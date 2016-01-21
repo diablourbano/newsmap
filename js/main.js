@@ -97,9 +97,10 @@ $(function() {
 
       if (selectedTrending == 'News') {
         drawArticles(newsToDisplay, function() { return; })
+
       } else if (selectedTrending == 'close-sidebar') {
-        $("#news-menu").hide();
-        $("#sidebar").hide();
+        $("#news-menu").fadeOut();
+        $("#sidebar").fadeOut();
 
       } else {
         getRelevantNewsForTrending(selectedTrending, function() {

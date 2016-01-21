@@ -45,8 +45,6 @@ function zoomIn(countries, projection, path, canvas, zoom, countryName) {
   zoomBounds(projection, countries[countryId], path);
 
   canvas.transition()
-    .ease("quad-out")
-    .duration(2000) // see https://github.com/mbostock/d3/pull/2045
     .call(zoom.projection(projection).event);
 
   $.getJSON(tinataUrl(countryName))
@@ -61,7 +59,7 @@ function zoomIn(countries, projection, path, canvas, zoom, countryName) {
           $("#sidebar").fadeOut();
           selectedTrending = null;
 
-          d3.timer(function() {
+          setTimeout(function() {
             structureNews(countryName, response);
             drawArticles(newsToDisplay, function() {
               if (shouldPlayNews == true) {
