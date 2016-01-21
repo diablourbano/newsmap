@@ -98,8 +98,8 @@ $(function() {
       if (selectedTrending == 'News') {
         drawArticles(newsToDisplay, function() { return; })
       } else if (selectedTrending == 'close-sidebar') {
-        $("#news-menu").fadeOut();
-        $("#sidebar").fadeOut();
+        $("#news-menu").hide();
+        $("#sidebar").hide();
 
       } else {
         getRelevantNewsForTrending(selectedTrending, function() {
