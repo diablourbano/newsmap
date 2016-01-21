@@ -45,7 +45,7 @@ function zoomIn(countries, projection, path, canvas, zoom, countryName) {
   zoomBounds(projection, countries[countryId], path);
 
   canvas.transition()
-    .ease("quad-in-out")
+    .ease("quad-out")
     .duration(2000) // see https://github.com/mbostock/d3/pull/2045
     .call(zoom.projection(projection).event);
 
